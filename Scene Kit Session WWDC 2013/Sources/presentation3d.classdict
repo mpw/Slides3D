@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>methodDict</key>
+	<dict>
+		<key>ASCSlideChapter1</key>
+		<dict>
+			<key>&lt;void&gt;setupSlideWithPresentationViewController:controller</key>
+			<string>   self textManager setChapterTitle:'What''s old in Smalltalk'.
+</string>
+		</dict>
+	</dict>
+	<key>uniqueID</key>
+	<string>9B99C739-6CD0-4289-8ADE-8A5A240E26E4-2335-00000D176D698AF4</string>
+</dict>
+</plist>
