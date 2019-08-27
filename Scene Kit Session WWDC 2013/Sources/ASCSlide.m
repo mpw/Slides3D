@@ -135,6 +135,17 @@
     return self;
 }
 
+
+-(instancetype)initWithDictionary:(NSDictionary *)dict
+{
+    self=[self init];
+    for ( NSString *key in [dict allKeys]) {
+        [self setValue:dict[key] forKey:key];
+    }
+    return self;
+}
+
+
 #pragma mark -
 #pragma mark Navigating within the slide
 

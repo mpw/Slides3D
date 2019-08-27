@@ -97,6 +97,8 @@
 #import "ASCSlideTextManager.h"
 #import "ASCSlide.h"
 #import "Utils.h"
+#import "ASCBoxMaker.h"
+
 
 @interface ASCSlideArchitecture : ASCSlide
 @end
@@ -117,49 +119,31 @@
     [container addChildNode:shapeGroup];
 
     // Create and place the boxes
-
+    ASCBoxMaker *boxer=[ASCBoxMaker new];
     // Cocoa box
-    SCNNode *box = [SCNNode asc_boxNodeWithTitle:@"Cocoa" frame:NSMakeRect(0, 0, 500, 70) color:[NSColor grayColor] cornerRadius:2.0 centered:YES];
-    box.scale = SCNVector3Make(0.02, 0.02, 0.02);
-    box.position = SCNVector3Make(-5, 4.5, 10.0);
-    [shapeGroup addChildNode:box];
-        
+     [shapeGroup addChildNode:[boxer box:@"Cocoa" frame:NSMakeRect(0, 0, 500, 70) color:[NSColor grayColor]  at:NSMakePoint(-5,4.5)]];
+
     // Core Image box
-    NSColor *green = [NSColor colorWithDeviceRed:105 / 255.0 green:145.0 / 255.0 blue:14.0 / 255.0 alpha:1];
-    box = [SCNNode asc_boxNodeWithTitle:@"Core Image" frame:NSMakeRect(0, 0, 100, 70) color:green cornerRadius:2.0 centered:YES];
-    box.scale = SCNVector3Make(0.02, 0.02, 0.02);
-    box.position = SCNVector3Make(-5, 3.0, 10.0);
-    [shapeGroup addChildNode:box];
-    
+   NSColor *green = [NSColor colorWithDeviceRed:105 / 255.0 green:145.0 / 255.0 blue:14.0 / 255.0 alpha:1];
+    [shapeGroup addChildNode:[boxer box:@"Core Image" frame:NSMakeRect(0, 0, 100, 70) color:green  at:NSMakePoint(-5,3.0)]];
+    boxer.p = NSMakePoint(-5,3.0);
+    boxer.color = green;
+
     // Core Animation box
-    box = [SCNNode asc_boxNodeWithTitle:@"Core Animation" frame:NSMakeRect(260, 0, 130, 70) color:green cornerRadius:2.0 centered:YES];
-    box.scale = SCNVector3Make(0.02, 0.02, 0.02);
-    box.position = SCNVector3Make(-5, 3.0, 10.0);
-    [shapeGroup addChildNode:box];
+    [shapeGroup addChildNode:[boxer box:@"Core Animation" frame:NSMakeRect(260, 0, 130, 70)]];
 
     // GL Kit box
-    box = [SCNNode asc_boxNodeWithTitle:@"GL Kit" frame:NSMakeRect(395, 0, 105, 70) color:green cornerRadius:2.0 centered:YES];
-    box.scale = SCNVector3Make(0.02, 0.02, 0.02);
-    box.position = SCNVector3Make(-5, 3.0, 10.0);
-    [shapeGroup addChildNode:box];
+    [shapeGroup addChildNode:[boxer box:@"GL Kit" frame:NSMakeRect(395, 0, 105, 70) color:[NSColor grayColor]]];
 
     // Scene Kit box
-    box = [SCNNode asc_boxNodeWithTitle:@"Scene Kit" frame:NSMakeRect(105, 0, 150, 70) color:[NSColor orangeColor] cornerRadius:2.0 centered:YES];
-    box.scale = SCNVector3Make(0.02, 0.02, 0.02);
-    box.position = SCNVector3Make(-5, 3.0, 10.0);
-    [shapeGroup addChildNode:box];
-    
-    // OpenGL box
-    box = [SCNNode asc_boxNodeWithTitle:@"OpenGL" frame:NSMakeRect(0, 0, 500, 70) color:[NSColor colorWithDeviceRed:152 / 255.0 green:57 / 255.0 blue:189 / 255.0 alpha:1] cornerRadius:2.0 centered:YES];
-    box.scale = SCNVector3Make(0.02, 0.02, 0.02);
-    box.position = SCNVector3Make(-5, 1.5, 10.0);
-    [shapeGroup addChildNode:box];
-    
+    [shapeGroup addChildNode:[boxer box:@"SceneKit" frame:NSMakeRect(105, 0, 150, 70) color:[NSColor orangeColor]]];
+
+    boxer.p = NSMakePoint(-5,1.5);
+    [shapeGroup addChildNode:[boxer box:@"OpenGL" frame:NSMakeRect(0, 0, 500, 70) color:[NSColor colorWithDeviceRed:152 / 255.0 green:57 / 255.0 blue:189 / 255.0 alpha:1]]];
+
+    boxer.p = NSMakePoint(-5,0);
     // Graphics Hardware box
-    box = [SCNNode asc_boxNodeWithTitle:@"Graphics Hardware" frame:NSMakeRect(0, 0, 500, 70) color:[NSColor colorWithDeviceRed:168 / 255.0 green:21 / 255.0 blue:1 / 255.0 alpha:1] cornerRadius:2.0 centered:YES];
-    box.scale = SCNVector3Make(0.02, 0.02, 0.02);
-    box.position = SCNVector3Make(-5, 0.0, 10.0);
-    [shapeGroup addChildNode:box];
+    [shapeGroup addChildNode:[boxer box:@"Graphics Hardware" frame:NSMakeRect(0, 0, 500, 70)   color:[NSColor colorWithDeviceRed:168 / 255.0 green:21 / 255.0 blue:1 / 255.0 alpha:1]]];
 }
 
 @end

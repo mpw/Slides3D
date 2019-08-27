@@ -255,6 +255,10 @@
 		1F2BBABB2257501C007202D8 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC5437D1757DC2600345497 /* Utils.m */; };
 		1F2BBABC2257501C007202D8 /* GLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC543801757DC7A00345497 /* GLUtils.m */; };
 		1F2BBABD225751F7007202D8 /* Scene Kit Presentation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CC544CB1757E16500345497 /* Scene Kit Presentation.plist */; };
+		1F5A602D2315238900FA49E6 /* ASCBoxMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F5A602B2315238900FA49E6 /* ASCBoxMaker.h */; };
+		1F5A602E2315238900FA49E6 /* ASCBoxMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5A602C2315238900FA49E6 /* ASCBoxMaker.m */; };
+		1FB4B16E228C0D0300C3D399 /* ASCChapterSlide.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB4B16C228C0D0300C3D399 /* ASCChapterSlide.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB4B16F228C0D0300C3D399 /* ASCChapterSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB4B16D228C0D0300C3D399 /* ASCChapterSlide.m */; };
 		1FBFEB3A18FA6FB0009D42E2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC543331757D27000345497 /* Cocoa.framework */; };
 		1FBFEB4018FA6FB0009D42E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1FBFEB3E18FA6FB0009D42E2 /* InfoPlist.strings */; };
 		1FBFEB4B18FA6FB0009D42E2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FBFEB4A18FA6FB0009D42E2 /* XCTest.framework */; };
@@ -273,6 +277,8 @@
 		1FBFEB6818FA74BB009D42E2 /* Slides3D.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FBFEB3918FA6FB0009D42E2 /* Slides3D.framework */; };
 		1FBFEB6A18FA75BD009D42E2 /* MethodServer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FBFEB6918FA75BD009D42E2 /* MethodServer.framework */; };
 		1FBFEB6C18FA76EF009D42E2 /* presentation3d.classdict in Resources */ = {isa = PBXBuildFile; fileRef = 1FBFEB6B18FA76EF009D42E2 /* presentation3d.classdict */; };
+		1FC797782309DEE2007E0CD5 /* ASCBulletSlide.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FC797762309DEE2007E0CD5 /* ASCBulletSlide.h */; };
+		1FC797792309DEE2007E0CD5 /* ASCBulletSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FC797772309DEE2007E0CD5 /* ASCBulletSlide.m */; };
 		94E174391762B9EC00D8C935 /* bunny.dae in Resources */ = {isa = PBXBuildFile; fileRef = 94E174381762B9EC00D8C935 /* bunny.dae */; settings = {ATTRIBUTES = ("--compress", ); }; };
 		9CC543341757D27000345497 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC543331757D27000345497 /* Cocoa.framework */; };
 		9CC5433E1757D27000345497 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9CC5433C1757D27000345497 /* InfoPlist.strings */; };
@@ -294,6 +300,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F5A602B2315238900FA49E6 /* ASCBoxMaker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASCBoxMaker.h; sourceTree = "<group>"; };
+		1F5A602C2315238900FA49E6 /* ASCBoxMaker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASCBoxMaker.m; sourceTree = "<group>"; };
+		1FB4B16C228C0D0300C3D399 /* ASCChapterSlide.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ASCChapterSlide.h; path = Slides3D/ASCChapterSlide.h; sourceTree = SOURCE_ROOT; };
+		1FB4B16D228C0D0300C3D399 /* ASCChapterSlide.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ASCChapterSlide.m; path = Slides3D/ASCChapterSlide.m; sourceTree = SOURCE_ROOT; };
 		1FBFEB3918FA6FB0009D42E2 /* Slides3D.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Slides3D.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FBFEB3D18FA6FB0009D42E2 /* Slides3D-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Slides3D-Info.plist"; sourceTree = "<group>"; };
 		1FBFEB3F18FA6FB0009D42E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -307,6 +317,8 @@
 		1FBFEB6618FA74B2009D42E2 /* ObjectiveSmalltalk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectiveSmalltalk.framework; path = ../../programming/Build/Release/ObjectiveSmalltalk.framework; sourceTree = "<group>"; };
 		1FBFEB6918FA75BD009D42E2 /* MethodServer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MethodServer.framework; path = ../../programming/Build/Release/MethodServer.framework; sourceTree = "<group>"; };
 		1FBFEB6B18FA76EF009D42E2 /* presentation3d.classdict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = presentation3d.classdict; path = Sources/presentation3d.classdict; sourceTree = "<group>"; };
+		1FC797762309DEE2007E0CD5 /* ASCBulletSlide.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ASCBulletSlide.h; path = Sources/Slides/ASCBulletSlide.h; sourceTree = "<group>"; };
+		1FC797772309DEE2007E0CD5 /* ASCBulletSlide.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ASCBulletSlide.m; path = Sources/Slides/ASCBulletSlide.m; sourceTree = "<group>"; };
 		94CE7EB71764DA8A0008A271 /* cornell-box.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = "cornell-box.dae"; sourceTree = "<group>"; };
 		94CE7EB81764DA8A0008A271 /* cornellLM.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cornellLM.JPG; sourceTree = "<group>"; };
 		94E174381762B9EC00D8C935 /* bunny.dae */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml.dae; path = bunny.dae; sourceTree = "<group>"; };
@@ -670,6 +682,8 @@
 				9CC5436E1757D4BE00345497 /* ASCPresentationViewController.m */,
 				9CC543761757DA7900345497 /* ASCSlide.h */,
 				9CC543771757DA7900345497 /* ASCSlide.m */,
+				1FB4B16C228C0D0300C3D399 /* ASCChapterSlide.h */,
+				1FB4B16D228C0D0300C3D399 /* ASCChapterSlide.m */,
 				9CC543701757D7C800345497 /* ASCSlideTextManager.h */,
 				9CC543711757D7C800345497 /* ASCSlideTextManager.m */,
 			);
@@ -684,6 +698,8 @@
 				9CC5437D1757DC2600345497 /* Utils.m */,
 				9CC5437F1757DC7A00345497 /* GLUtils.h */,
 				9CC543801757DC7A00345497 /* GLUtils.m */,
+				1F5A602B2315238900FA49E6 /* ASCBoxMaker.h */,
+				1F5A602C2315238900FA49E6 /* ASCBoxMaker.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -817,6 +833,8 @@
 				9CC5439E1757E10000345497 /* ASCSlideImplicitAnimations.m */,
 				9CC5439F1757E10000345497 /* ASCSlideInterfaceBuilder.m */,
 				9CC543A01757E10000345497 /* ASCSlideIntroduction.m */,
+				1FC797762309DEE2007E0CD5 /* ASCBulletSlide.h */,
+				1FC797772309DEE2007E0CD5 /* ASCBulletSlide.m */,
 				9CC543A11757E10000345497 /* ASCSlideLabs.m */,
 				9CC543A21757E10000345497 /* ASCSlideLight.m */,
 				9CC543A31757E10000345497 /* ASCSlideLighting.m */,
@@ -1207,6 +1225,9 @@
 				1FBFEB6218FA71B8009D42E2 /* ASCSlideTextManager.h in Headers */,
 				1F2BB9F722574DBC007202D8 /* ASCSlideScenegraph.h in Headers */,
 				1FBFEB5E18FA71B8009D42E2 /* ASCPresentationViewController.h in Headers */,
+				1FB4B16E228C0D0300C3D399 /* ASCChapterSlide.h in Headers */,
+				1FC797782309DEE2007E0CD5 /* ASCBulletSlide.h in Headers */,
+				1F5A602D2315238900FA49E6 /* ASCBoxMaker.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1557,6 +1578,7 @@
 				1F2BB9DA22574DBC007202D8 /* ASCSlideEditor.m in Sources */,
 				1F2BB9F922574DBC007202D8 /* ASCSlideScenegraphSummary.m in Sources */,
 				1F2BB9FB22574DBC007202D8 /* ASCSlideSkinning.m in Sources */,
+				1FC797792309DEE2007E0CD5 /* ASCBulletSlide.m in Sources */,
 				1F2BBABC2257501C007202D8 /* GLUtils.m in Sources */,
 				1F2BB9DF22574DBC007202D8 /* ASCSlideGeometry.m in Sources */,
 				1F2BB9C722574DBC007202D8 /* ASCSlideAnimationEvents.m in Sources */,
@@ -1567,6 +1589,7 @@
 				1F2BB9EB22574DBC007202D8 /* ASCSlideManipulation4.m in Sources */,
 				1F2BB9DD22574DBC007202D8 /* ASCSlideExtendingOutline.m in Sources */,
 				1F2BB9DC22574DBC007202D8 /* ASCSlideExplicitAnimations.m in Sources */,
+				1F5A602E2315238900FA49E6 /* ASCBoxMaker.m in Sources */,
 				1F2BB9CF22574DBC007202D8 /* ASCSlideChapter6.m in Sources */,
 				1F2BB9EA22574DBC007202D8 /* ASCSlideManipulation3.m in Sources */,
 				1F2BB9E122574DBC007202D8 /* ASCSlideInterfaceBuilder.m in Sources */,
@@ -1575,6 +1598,7 @@
 				1F2BB9E022574DBC007202D8 /* ASCSlideImplicitAnimations.m in Sources */,
 				1F2BB9D422574DBC007202D8 /* ASCSlideCreateAScene2.m in Sources */,
 				1F2BB9D722574DBC007202D8 /* ASCSlideDaeOnOSX.m in Sources */,
+				1FB4B16F228C0D0300C3D399 /* ASCChapterSlide.m in Sources */,
 				1F2BB9E922574DBC007202D8 /* ASCSlideManipulation2.m in Sources */,
 				1F2BB9D522574DBC007202D8 /* ASCSlideCreatingGeometries.m in Sources */,
 				1F2BB9D022574DBC007202D8 /* ASCSlideCloning.m in Sources */,

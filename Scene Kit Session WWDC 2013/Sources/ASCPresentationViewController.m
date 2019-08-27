@@ -147,7 +147,7 @@ typedef NS_ENUM(NSUInteger, ASCLightName) {
 
 
 
-- (id)initWithSettingsDict:(NSDictionary *)dict {
+- (id)initWithDictionary:(NSDictionary *)dict {
     if ((self = [super initWithNibName:nil bundle:nil])) {
         // Load the presentation settings from the plist file
         _settings = dict;
@@ -221,7 +221,7 @@ typedef NS_ENUM(NSUInteger, ASCLightName) {
 
 - (id)initWithContentsOfFile:(NSString *)path {
     NSString *settingsPath = [[NSBundle bundleForClass:[self class]] pathForResource:path ofType:@"plist"];
-    return [self initWithSettingsDict:[NSDictionary dictionaryWithContentsOfFile:settingsPath]];
+    return [self initWithDictionary:[NSDictionary dictionaryWithContentsOfFile:settingsPath]];
     
 }
 
@@ -243,6 +243,29 @@ typedef NS_ENUM(NSUInteger, ASCLightName) {
 #pragma mark -
 #pragma Slide creation and warm up
 
+
+-(ASCSlide*)createSlideAtIndex:(int)slideIndex
+{
+    ASCSlide *slide = _settings[@"Slides"][slideIndex];
+    if ( [slide isKindOfClass:[ASCSlide class]]) {
+        return slide;
+    }
+
+    Class slideClass = [self classOfSlideAtIndex:slideIndex];
+    slide = [[slideClass alloc] init];
+
+    // update its parameters
+    NSDictionary *info = _settings[@"Slides"][slideIndex];
+
+
+    NSDictionary *parameters = info[@"Parameters"];
+    [parameters enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        [slide setValue:obj forKey:key];
+    }];
+
+    return slide;
+}
+
 // This method creates and setup the slide at the specified index and returns it.
 // The new slide is cached in the _slides array.
 - (ASCSlide *)slideAtIndex:(NSInteger)slideIndex loadIfNeeded:(BOOL)loadIfNeeded {
@@ -259,15 +282,8 @@ typedef NS_ENUM(NSUInteger, ASCLightName) {
         return nil;
     
     // create the new slide
-    Class slideClass = [self classOfSlideAtIndex:slideIndex];
-    slide = [[slideClass alloc] init];
-    
-    // update its parameters
-    NSDictionary *info = _settings[@"Slides"][slideIndex];
-    NSDictionary *parameters = info[@"Parameters"];
-    [parameters enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-        [slide setValue:obj forKey:key];
-    }];
+
+    slide = [self createSlideAtIndex:slideIndex];
 
     _slideCache[@(slideIndex)] = slide;
     
@@ -511,7 +527,7 @@ typedef NS_ENUM(NSUInteger, ASCLightName) {
         [slide orderOutWithPresentionViewController:self];
         
         //remove from the slides array to free some memory
-        [_slideCache removeObjectForKey:@(slideIndex)];
+//        [_slideCache removeObjectForKey:@(slideIndex)];
     }
 }
 
@@ -783,5 +799,20 @@ CGFloat _lightHueAtSlideIndex(int index) {
     if (index == 5) return 200/360.0; //blue
     return 0; //black and white
 }
+
+-(void)keyUp:(NSEvent*)event {
+    if (event.keyCode == 124 || event.keyCode==49 ) {
+        [self goToNextSlideStep];
+    } else 
+    if (event.keyCode == 123 ) {
+        [self goToPreviousSlide];
+    } else {
+        NSLog(@"keyCode: %d",event.keyCode);
+    }
+}
+-(void)keyDown:event {
+}
+
+
 
 @end
