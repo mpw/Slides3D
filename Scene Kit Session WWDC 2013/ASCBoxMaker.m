@@ -38,7 +38,27 @@
     return [self box:text frame:frame color:self.color];
 }
 
+-(SCNNode*)box:(NSString*)text width:(float)w color:(NSColor*)color
+{
+    NSRect frame;
+    frame.origin = self.position;
+    frame.size.width = w;
+    frame.size.height = self.height;
+    NSPoint newPosition = self.position;
+    newPosition.x += w + self.padding;
+    self.position = newPosition;
+    return [self box:text frame:frame color:color];
+}
 
+-(SCNNode*)box:(NSString*)text width:(float)w
+{
+    return [self box:text width:w color:self.color];
+}
 
+-(void)nextLine
+{
+    self.position = NSMakePoint(0,0);
+    self.p = NSMakePoint( self.p.x, self.p.y - self.yHeight );
+}
 
 @end

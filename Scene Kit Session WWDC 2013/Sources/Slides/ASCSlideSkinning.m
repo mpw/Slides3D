@@ -93,17 +93,13 @@
  5/3/2013
  */
 
+#import "ASCSlideSkinning.h"
 #import "ASCPresentationViewController.h"
 #import "ASCSlideTextManager.h"
-#import "ASCSlide.h"
 #import "Utils.h"
 
-@interface ASCSlideSkinning : ASCSlide
-@end
 
-@implementation ASCSlideSkinning {
-    CAAnimation *_animations[3];
-}
+@implementation ASCSlideSkinning 
 
 /*
  "animationGroup" is a long animation playing 3 successive animations.
@@ -154,13 +150,19 @@
         [self setShaderModifier:modifier onNode:child];
 }
 
-- (void)setupSlideWithPresentationViewController:(ASCPresentationViewController *)presentation {
-    //retrieve the text manager and add some text
+-(void)setupInitialText
+{
     ASCSlideTextManager *textManager = [self textManager];
     [textManager setTitle:@"Skinning"];
     [textManager addBullet:@"Animate characters" atLevel:0];
     [textManager addBullet:@"Deform geometries with a skeleton" atLevel:0];
     [textManager addBullet:@"Joints and bones" atLevel:0];
+
+}
+
+- (void)setupSlideWithPresentationViewController:(ASCPresentationViewController *)presentation {
+    //retrieve the text manager and add some text
+    [self setupInitialText];
 
     //create a node that will own the avatar
     SCNNode *intermediateNode = [SCNNode node];

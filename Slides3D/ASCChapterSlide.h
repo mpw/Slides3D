@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ASCChapterSlide : ASCSlide
 
 @property (nonatomic,strong)  NSString *text;
+@property (nonatomic,strong)  NSString *subtitle;
 
 @end
 

@@ -29,6 +29,10 @@
 
     // add a text entry
     [textManager setChapterTitle:self.text];
+    if ( self.subtitle) {
+        [textManager setSubtitle:self.subtitle];
+    }
+
 }
 
 

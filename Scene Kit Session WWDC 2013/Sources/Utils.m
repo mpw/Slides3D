@@ -341,6 +341,14 @@
     return gaugeGroup;
 }
 
+-(void)setXYPosition:(NSPoint)p
+{
+    SCNVector3 newOrigin=self.position;
+    newOrigin.x = p.x;
+    newOrigin.y = p.y;
+    self.position=newOrigin;
+}
+
 @end
 
 @implementation NSBezierPath (ASCAdditions)

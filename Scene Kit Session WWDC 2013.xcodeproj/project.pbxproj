@@ -257,6 +257,9 @@
 		1F2BBABD225751F7007202D8 /* Scene Kit Presentation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9CC544CB1757E16500345497 /* Scene Kit Presentation.plist */; };
 		1F5A602D2315238900FA49E6 /* ASCBoxMaker.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F5A602B2315238900FA49E6 /* ASCBoxMaker.h */; };
 		1F5A602E2315238900FA49E6 /* ASCBoxMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5A602C2315238900FA49E6 /* ASCBoxMaker.m */; };
+		1F5A60312317C5F100FA49E6 /* ASCSlideWithFigure.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F5A602F2317C5F100FA49E6 /* ASCSlideWithFigure.h */; };
+		1F5A60322317C5F100FA49E6 /* ASCSlideWithFigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F5A60302317C5F100FA49E6 /* ASCSlideWithFigure.m */; };
+		1F5A60342317C6ED00FA49E6 /* ASCSlideSkinning.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F5A60332317C6ED00FA49E6 /* ASCSlideSkinning.h */; };
 		1FB4B16E228C0D0300C3D399 /* ASCChapterSlide.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FB4B16C228C0D0300C3D399 /* ASCChapterSlide.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1FB4B16F228C0D0300C3D399 /* ASCChapterSlide.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FB4B16D228C0D0300C3D399 /* ASCChapterSlide.m */; };
 		1FBFEB3A18FA6FB0009D42E2 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CC543331757D27000345497 /* Cocoa.framework */; };
@@ -302,6 +305,9 @@
 /* Begin PBXFileReference section */
 		1F5A602B2315238900FA49E6 /* ASCBoxMaker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASCBoxMaker.h; sourceTree = "<group>"; };
 		1F5A602C2315238900FA49E6 /* ASCBoxMaker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASCBoxMaker.m; sourceTree = "<group>"; };
+		1F5A602F2317C5F100FA49E6 /* ASCSlideWithFigure.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASCSlideWithFigure.h; sourceTree = "<group>"; };
+		1F5A60302317C5F100FA49E6 /* ASCSlideWithFigure.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASCSlideWithFigure.m; sourceTree = "<group>"; };
+		1F5A60332317C6ED00FA49E6 /* ASCSlideSkinning.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASCSlideSkinning.h; sourceTree = "<group>"; };
 		1FB4B16C228C0D0300C3D399 /* ASCChapterSlide.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ASCChapterSlide.h; path = Slides3D/ASCChapterSlide.h; sourceTree = SOURCE_ROOT; };
 		1FB4B16D228C0D0300C3D399 /* ASCChapterSlide.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ASCChapterSlide.m; path = Slides3D/ASCChapterSlide.m; sourceTree = SOURCE_ROOT; };
 		1FBFEB3918FA6FB0009D42E2 /* Slides3D.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Slides3D.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -859,7 +865,10 @@
 				9CC543B61757E10000345497 /* ASCSlideScenegraph.m */,
 				9CC543B71757E10000345497 /* ASCSlideScenegraphSummary.m */,
 				9CC543B91757E10000345497 /* ASCSlideShaderModifiers.m */,
+				1F5A60332317C6ED00FA49E6 /* ASCSlideSkinning.h */,
 				9CC543BA1757E10000345497 /* ASCSlideSkinning.m */,
+				1F5A602F2317C5F100FA49E6 /* ASCSlideWithFigure.h */,
+				1F5A60302317C5F100FA49E6 /* ASCSlideWithFigure.m */,
 				9CC543BB1757E10000345497 /* ASCSlideStatistics.m */,
 				9CC543BC1757E10000345497 /* ASCSlideTexturing.m */,
 			);
@@ -1221,9 +1230,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F5A60312317C5F100FA49E6 /* ASCSlideWithFigure.h in Headers */,
 				1FBFEB6018FA71B8009D42E2 /* ASCSlide.h in Headers */,
 				1FBFEB6218FA71B8009D42E2 /* ASCSlideTextManager.h in Headers */,
 				1F2BB9F722574DBC007202D8 /* ASCSlideScenegraph.h in Headers */,
+				1F5A60342317C6ED00FA49E6 /* ASCSlideSkinning.h in Headers */,
 				1FBFEB5E18FA71B8009D42E2 /* ASCPresentationViewController.h in Headers */,
 				1FB4B16E228C0D0300C3D399 /* ASCChapterSlide.h in Headers */,
 				1FC797782309DEE2007E0CD5 /* ASCBulletSlide.h in Headers */,
@@ -1607,6 +1618,7 @@
 				1F2BB9E522574DBC007202D8 /* ASCSlideLighting.m in Sources */,
 				1F2BB9FD22574DBC007202D8 /* ASCSlideTexturing.m in Sources */,
 				1F2BB9C822574DBC007202D8 /* ASCSlideArchitecture.m in Sources */,
+				1F5A60322317C5F100FA49E6 /* ASCSlideWithFigure.m in Sources */,
 				1F2BB9E222574DBC007202D8 /* ASCSlideIntroduction.m in Sources */,
 				1F2BB9E622574DBC007202D8 /* ASCSlideLoadingDAE.m in Sources */,
 				1F2BB9F222574DBC007202D8 /* ASCSlideNodeDelegate.m in Sources */,

@@ -119,31 +119,41 @@
     [container addChildNode:shapeGroup];
 
     // Create and place the boxes
+    NSColor *green = [NSColor colorWithDeviceRed:105 / 255.0 green:145.0 / 255.0 blue:14.0 / 255.0 alpha:1];
+
     ASCBoxMaker *boxer=[ASCBoxMaker new];
+
+    boxer.p = NSMakePoint(-5,4.5);
+    boxer.color = green;
+    boxer.position = NSMakePoint(0,0);
+    boxer.height = 70;
+    boxer.padding = 5;
+    boxer.yHeight = 1.5;
+
+
     // Cocoa box
-     [shapeGroup addChildNode:[boxer box:@"Cocoa" frame:NSMakeRect(0, 0, 500, 70) color:[NSColor grayColor]  at:NSMakePoint(-5,4.5)]];
+    [shapeGroup addChildNode:[boxer box:@"Cocoa" width:500 color:[NSColor grayColor]]];
+    [boxer nextLine];
+
 
     // Core Image box
-   NSColor *green = [NSColor colorWithDeviceRed:105 / 255.0 green:145.0 / 255.0 blue:14.0 / 255.0 alpha:1];
-    [shapeGroup addChildNode:[boxer box:@"Core Image" frame:NSMakeRect(0, 0, 100, 70) color:green  at:NSMakePoint(-5,3.0)]];
-    boxer.p = NSMakePoint(-5,3.0);
-    boxer.color = green;
-
-    // Core Animation box
-    [shapeGroup addChildNode:[boxer box:@"Core Animation" frame:NSMakeRect(260, 0, 130, 70)]];
-
-    // GL Kit box
-    [shapeGroup addChildNode:[boxer box:@"GL Kit" frame:NSMakeRect(395, 0, 105, 70) color:[NSColor grayColor]]];
+    [shapeGroup addChildNode:[boxer box:@"Core Image" width:100]];
 
     // Scene Kit box
-    [shapeGroup addChildNode:[boxer box:@"SceneKit" frame:NSMakeRect(105, 0, 150, 70) color:[NSColor orangeColor]]];
+    [shapeGroup addChildNode:[boxer box:@"SceneKit" width:150 color:[NSColor orangeColor]]];
 
-    boxer.p = NSMakePoint(-5,1.5);
-    [shapeGroup addChildNode:[boxer box:@"OpenGL" frame:NSMakeRect(0, 0, 500, 70) color:[NSColor colorWithDeviceRed:152 / 255.0 green:57 / 255.0 blue:189 / 255.0 alpha:1]]];
+   // Core Animation box
+    [shapeGroup addChildNode:[boxer box:@"Core Animation" width:130]];
 
-    boxer.p = NSMakePoint(-5,0);
+    // GL Kit box
+    [shapeGroup addChildNode:[boxer box:@"GL Kit" width:105 color:[NSColor grayColor]]];
+
+    [boxer nextLine];
+    [shapeGroup addChildNode:[boxer box:@"OpenGL" width:500 color:[NSColor colorWithDeviceRed:152 / 255.0 green:57 / 255.0 blue:189 / 255.0 alpha:1]]];
+
+    [boxer nextLine];
     // Graphics Hardware box
-    [shapeGroup addChildNode:[boxer box:@"Graphics Hardware" frame:NSMakeRect(0, 0, 500, 70)   color:[NSColor colorWithDeviceRed:168 / 255.0 green:21 / 255.0 blue:1 / 255.0 alpha:1]]];
+    [shapeGroup addChildNode:[boxer box:@"Graphics Hardware" width:500 color:[NSColor colorWithDeviceRed:168 / 255.0 green:21 / 255.0 blue:1 / 255.0 alpha:1]]];
 }
 
 @end
