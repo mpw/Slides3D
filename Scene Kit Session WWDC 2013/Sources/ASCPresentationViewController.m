@@ -269,7 +269,7 @@ typedef NS_ENUM(NSUInteger, ASCLightName) {
 // This method creates and setup the slide at the specified index and returns it.
 // The new slide is cached in the _slides array.
 - (ASCSlide *)slideAtIndex:(NSInteger)slideIndex loadIfNeeded:(BOOL)loadIfNeeded {
-    if (slideIndex < 0 || slideIndex >= [_settings[@"Slides"] count])
+    if (slideIndex < 0 || slideIndex >= [self numberOfSlides])
         return nil;
     
     // look into the cache first
@@ -342,6 +342,16 @@ typedef NS_ENUM(NSUInteger, ASCLightName) {
 
 - (void)goToPreviousSlide {
     [self goToSlideAtIndex:_currentSlideIndex - 1];
+}
+
+-(long)currentSlideIndex
+{
+    return _currentSlideIndex;
+}
+
+-(BOOL)isAtEnd
+{
+    return [self currentSlideIndex] >= [self numberOfSlides]-1;
 }
 
 - (void)goToSlideAtIndex:(NSInteger)slideIndex {

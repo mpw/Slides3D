@@ -32,6 +32,9 @@
     if ( self.subtitle) {
         [textManager setSubtitle:self.subtitle];
     }
+    if ( self.chapterTitle) {
+        [textManager setTitle:self.chapterTitle];
+    }
 
 }
 

@@ -19,7 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) float height;
 @property (nonatomic, assign) float yHeight;
 @property (nonatomic, assign) float padding;
+@property (nonatomic, assign) float fontSize;
 @property (nonatomic, assign) NSPoint position;
+
 
 
 -(SCNNode*)box:(NSString*)text frame:(NSRect)frame color:(NSColor*)color at:(NSPoint)p;

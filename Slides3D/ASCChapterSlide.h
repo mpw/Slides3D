@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,strong)  NSString *text;
 @property (nonatomic,strong)  NSString *subtitle;
+@property (nonatomic,strong)  NSString *chapterTitle;
 
 @end
 

@@ -14,6 +14,13 @@
 
 @implementation ASCBoxMaker
 
+-(instancetype)init
+{
+    self=[super init];
+    self.fontSize=34;
+    return self;
+}
+
 -(float)zPos
 {
     return 10.0;
@@ -22,7 +29,7 @@
 -(SCNNode*)box:(NSString*)text frame:(NSRect)frame color:(NSColor*)color at:(NSPoint)p;
 {
     // Core Image box
-    SCNNode *box = [SCNNode asc_boxNodeWithTitle:text frame:frame color:color cornerRadius:2.0 centered:YES];
+    SCNNode *box = [SCNNode asc_boxNodeWithTitle:text fontSize:self.fontSize frame:frame color:color cornerRadius:2.0 centered:YES];
     box.scale = SCNVector3Make(0.02, 0.02, 0.02);
     box.position = SCNVector3Make(p.x, p.y, [self zPos]);
     return box;

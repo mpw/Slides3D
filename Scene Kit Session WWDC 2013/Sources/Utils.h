@@ -102,6 +102,7 @@
 
 // setup a 3D box with a title
 + (instancetype)asc_boxNodeWithTitle:(NSString *)title frame:(NSRect)frame color:(NSColor *)color cornerRadius:(CGFloat)cornerRadius centered:(BOOL)centered;
++ (instancetype)asc_boxNodeWithTitle:(NSString *)title fontSize:(float)fontSize frame:(NSRect)frame color:(NSColor *)color cornerRadius:(CGFloat)cornerRadius centered:(BOOL)centered;
 
 // creates a 3D plan with the specified image mapped on it
 + (instancetype)asc_planeNodeWithImage:(NSImage *)image size:(CGFloat)size isLit:(BOOL)isLit;

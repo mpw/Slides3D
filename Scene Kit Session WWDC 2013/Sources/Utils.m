@@ -146,14 +146,14 @@
 }
 
 // setup a 3D box with a title
-+ (instancetype)asc_boxNodeWithTitle:(NSString *)title frame:(NSRect)frame color:(NSColor *)color cornerRadius:(CGFloat)cornerRadius centered:(BOOL)centered {
++ (instancetype)asc_boxNodeWithTitle:(NSString *)title fontSize:(float)fontSize frame:(NSRect)frame color:(NSColor *)color cornerRadius:(CGFloat)cornerRadius centered:(BOOL)centered {
 #define SHAPE_CHAMFER 0.0
 #define SHAPE_FLATNESS 0.05
 #define TITLE_LINE_HEIGHT 38
 #define TEXTURE_SCALE 1.5
     
-    static NSDictionary *titleAttributes = nil;
-    static NSDictionary *centeredTitleAttributes = nil;
+    NSDictionary *titleAttributes = nil;
+    NSDictionary *centeredTitleAttributes = nil;
     
     SCNNode *node = [SCNNode node];
     
@@ -204,11 +204,12 @@
             [paraphStyle setMinimumLineHeight:TITLE_LINE_HEIGHT];
             [paraphStyle setMaximumLineHeight:TITLE_LINE_HEIGHT];
             
-            NSFont *font = [NSFont fontWithName:@"Myriad Set Semibold" size:34];
+            NSFont *font = [NSFont fontWithName:@"Myriad Set Semibold" size:fontSize];
             if (!font) {
-                font = [NSFont fontWithName:@"Avenir Medium" size:34];
+                font = [NSFont fontWithName:@"Avenir Medium" size:fontSize];
             }
-            
+
+            NSLog(@"font: %@",font);
             NSShadow *shadow = [[NSShadow alloc] init];
             [shadow setShadowOffset:NSMakeSize(0, -2)];
             [shadow setShadowBlurRadius:4];
@@ -248,7 +249,9 @@
         
         //center vertically
         float dy = (drawFrame.size.height - textSize.height) * 0.5;
-        drawFrame.size.height -= dy;
+        float fontSizeOffset = fontSize/1.3 - 20;
+        fontSizeOffset=MAX(fontSizeOffset,0);
+        drawFrame.size.height -= (dy + fontSizeOffset);
         [attrString drawInRect:drawFrame];
     }
     
@@ -266,6 +269,10 @@
     
     return node;
 }
+
++ (instancetype)asc_boxNodeWithTitle:(NSString *)title frame:(NSRect)frame color:(NSColor *)color cornerRadius:(CGFloat)cornerRadius centered:(BOOL)centered {
+    return [self asc_boxNodeWithTitle:title fontSize:34 frame:frame color:color cornerRadius:cornerRadius centered:centered];
+    }
 
 // creates a 3D plan with the specified image mapped on it
 + (instancetype)asc_planeNodeWithImage:(NSImage *)image size:(CGFloat)size isLit:(BOOL)isLit {
